@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="calc.css">
+        <title>calculator</title>
+    </head>
+    <body>
+        <div class="cal-container">
+            <div class="calculator">
+                <input type="text" placeholder="0" id="input-box">
+                <button onClick="Clear()">C</button>
+                <button onClick="display('%')">%</button>
+                <button onClick="del()">DEL</button>
+                <button onClick="display('/')">/</button>
+                <button onClick="display('7')">7</button>
+                <button onClick="display('8')">8</button>
+                <button onClick="display('9')">9</button>
+                <button onClick="display('*')">*</button>
+                <button onClick="display('4')">4</button>
+                <button onClick="display('5')">5</button>
+                <button onClick="display('6')">6</button>
+                <button onClick="display('-')">-</button>
+                <button onClick="display('1')">1</button>
+                <button onClick="display('2')">2</button>
+                <button onClick="display('3')">3</button>
+                <button onClick="display('+')">+</button>
+               
+                <button onClick="display('0')">0</button>
+                <button onClick="display('.')">.</button>
+                <button onClick="Calculate()" class="equal">=</button>
+               
+
+            </div>
+        </div>
+        <script>
+            let inputScreen=document.getElementById("input-box");
+
+            function display(num){
+                inputScreen.value +=num;
+            }
+            function Calculate(){
+                try{
+                    inputScreen.value=eval(inputScreen.value);
+
+                }
+                catch(err){
+                    alert("invalid")
+                }
+
+            }
+            function Clear(){
+                inputScreen.value="";
+            }
+            function del(){
+                inputScreen.value=inputScreen.value.slice(0,-1);
+            }
+        </script>  
+    </body>
+</html>
